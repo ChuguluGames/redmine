@@ -1,5 +1,23 @@
-= Redmine
+install:
 
-Redmine is a flexible project management web application written using Ruby on Rails framework.
+  touch .rvmrc
+  cd ..
+  cd -
+  [press enter]
+  yes
 
-More details can be found at in the doc directory or on the official website http://www.redmine.org
+Update you environment (see below)
+And go http://www.redmine.org/projects/redmine/wiki/RedmineInstall
+
+>>>>>>> ENVIRONMENT <<<<<<<<<<<<
+ruby 1.8.7
+
+Need to downgrade Rubygems
+  gem update --system 1.6.2
+
+rails 2.3.11
+
+redmine version 1.2.1
+
+>>>>>>>>> HOW TO FIX "submit_query_form is not defined"  <<<<<<<<<<
+http://www.redmine.org/issues/8799
