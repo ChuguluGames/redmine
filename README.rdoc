@@ -13,14 +13,13 @@ And go http://www.redmine.org/projects/redmine/wiki/RedmineInstall
 
 ruby 1.8.7
 
-Need to downgrade Rubygems
-  gem update --system 1.6.2
-
 rails 2.3.11
 
 redmine version 1.2.1
 
+You need to downgrade Rubygems
+  gem update --system 1.6.2
+
 >>>>>>> HOW TO FIX <<<<<<<<<<<<<<
 
-**submit_query_form is not defined**
-  http://www.redmine.org/issues/8799
+"submit_query_form is not defined" --> http://www.redmine.org/issues/8799
