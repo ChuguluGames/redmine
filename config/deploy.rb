@@ -67,7 +67,7 @@ end
 
 # Automatically clean versions by keeping the 5 last versions
 after "deploy" do
-  bundler.create_symlink
-  bundler.install
+  # bundler.create_symlink
+  # bundler.install
   deploy.cleanup
 end
