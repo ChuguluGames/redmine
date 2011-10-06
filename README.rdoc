@@ -1,4 +1,4 @@
-install:
+>>>>>>> INSTAL <<<<<<<<<<<<<<<<
 
   touch .rvmrc
   cd ..
@@ -6,10 +6,11 @@ install:
   [press enter]
   yes
 
-Update you environment (see below)
+Update you environment (see "environment" section below)
 And go http://www.redmine.org/projects/redmine/wiki/RedmineInstall
 
 >>>>>>> ENVIRONMENT <<<<<<<<<<<<
+
 ruby 1.8.7
 
 Need to downgrade Rubygems
@@ -19,5 +20,7 @@ rails 2.3.11
 
 redmine version 1.2.1
 
->>>>>>>>> HOW TO FIX "submit_query_form is not defined"  <<<<<<<<<<
-http://www.redmine.org/issues/8799
+>>>>>>> HOW TO FIX <<<<<<<<<<<<<<
+
+**submit_query_form is not defined**
+  http://www.redmine.org/issues/8799
