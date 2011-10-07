@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'rack', '1.1.1'
+gem 'rails', '2.3.11'
+gem 'mysql'
+gem 'rake', '0.8.7'
+gem 'capistrano'
+gem 'holidays'
+gem 'multi_json'
+gem 'i18n', '0.4.2'
