@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rubygems-update', '1.6.2'
+#gem 'rubygems-update', '1.6.2'
 gem 'rails', '2.3.11'
 gem 'rack', '1.1.1'
 gem 'mysql'
