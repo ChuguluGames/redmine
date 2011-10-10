@@ -70,4 +70,5 @@ after "deploy" do
   bundler.create_symlink
   bundler.install
   deploy.cleanup
+  run "cd #{deploy_to}/current && bundle exec rake generate_session_store"
 end
