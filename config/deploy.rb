@@ -9,6 +9,21 @@ set :repository, "git@github.com:ChuguluGames/redmine.git"
 
 task :prod do
   set :type_server, "prod"
+  set :servername, "agence.chugulu.com"
+  set :home, "/space/www/redmine.chugulu.com/data/htdocs"
+  server servername, :web, :app, :db
+  role :app, servername, :memcached => true
+  role :web, servername
+  role :db,  servername, :primary => true
+  set :deploy_to, home
+  set :runner, 'ftpuser'
+  set :user, "chugulu"
+  set :branch, "master"
+  set :rails_env, 'production'
+end
+
+task :oldprod do
+  set :type_server, "prod"
   set :servername, "prod.chugulu.com"
   set :home, "/home/redmine/www"
   server servername, :web, :app, :db
@@ -20,7 +35,6 @@ task :prod do
   set :user, "redmine"
   set :branch, "master"
 end
-
 
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -57,7 +71,20 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/config/environments/production.rb #{release_path}/config/environments/production.rb"
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/configuration.yml #{release_path}/config/configuration.yml"
+    run "ln -nfs #{shared_path}/files #{release_path}/."
   end  
+end
+
+namespace :assets do
+  desc "Get files uploaded to redmine"
+  task :pull do
+    system "rsync -e ssh -avuzp  #{user}@#{servername}:#{shared_path}/files/ files/"
+  end
+
+  desc "Put the public/assets directory."
+  task :push do
+    system "rsync -e ssh -avzp --delete-after  --exclude-from=.rsyncignore files/ #{user}@#{servername}:#{shared_path}/files/"
+  end
 end
 
 # HOOKS
